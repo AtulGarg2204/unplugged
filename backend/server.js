@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Import routes
-const experienceRoutes = require('./routes/experiences');
+const experienceRoutes = require('./routes/Experiences');
 
 // Use routes
 app.use('/api/experiences', experienceRoutes);
