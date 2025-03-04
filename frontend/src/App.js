@@ -6,6 +6,8 @@ import HomePage from './pages/HomePage';
 import AdminPage from './pages/AdminPage';
 import AdminLogin from './pages/AdminLogin';
 import ExperienceDetails from './pages/ExperienceDetails';
+import BookingForm from './pages/BookingForm';
+import BookingConfirmation from './pages/BookingConfirmation';
 import ProtectedRoute from './components/ProtectedRoute';
 import './index.css';
 
@@ -25,6 +27,8 @@ function App() {
             } />
             <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
             <Route path="/experience/:id" element={<ExperienceDetails />} />
+            <Route path="/book-experience/:id" element={<BookingForm />} />
+            <Route path="/booking-confirmation" element={<BookingConfirmation />} />
           </Routes>
         </main>
         <Footer />

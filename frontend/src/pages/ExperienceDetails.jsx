@@ -158,14 +158,12 @@ const ExperienceDetails = () => {
             )}
           </div>
           
-          <a 
-            href={experience.googleFormLink || "https://l6ae6wgo.forms.app/unplugged-bhangra"} 
-            target="_blank" 
-            rel="noopener noreferrer"
+          <Link 
+            to={`/book-experience/${id}`}
             className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-8 rounded-md transition w-full text-center"
           >
             Book this Experience
-          </a>
+          </Link>
         </div>
       </div>
       

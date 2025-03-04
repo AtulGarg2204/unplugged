@@ -20,9 +20,10 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Import routes
 const experienceRoutes = require('./routes/Experiences');
-
+const bookingRoutes = require('./routes/bookings');
 // Use routes
 app.use('/api/experiences', experienceRoutes);
+app.use('/api/bookings', bookingRoutes);
 
 // Connect to MongoDB
 mongoose
