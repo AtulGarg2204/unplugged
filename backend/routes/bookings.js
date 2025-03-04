@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Booking = require('../models/Booking');
 const Experience = require('../models/Experience');
+const { sendBookingConfirmation } = require('../services/emailService');
 
 // Create a new booking
 router.post('/', async (req, res) => {
@@ -41,7 +42,18 @@ router.post('/', async (req, res) => {
 
     await booking.save();
 
-    res.status(201).json(booking);
+    // Send confirmation email
+    try {
+      await sendBookingConfirmation(booking, experience);
+    } catch (emailError) {
+      console.error('Failed to send confirmation email:', emailError);
+      // Don't return error here, as booking is still successful
+    }
+
+    res.status(201).json({ 
+      booking,
+      message: 'Booking successful! A confirmation email has been sent to your email address.'
+    });
   } catch (error) {
     console.error('Error creating booking:', error);
     res.status(500).json({ message: 'Error creating booking', error: error.message });

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Mail } from 'lucide-react';
 
 const BookingConfirmation = () => {
   return (
@@ -14,17 +14,32 @@ const BookingConfirmation = () => {
           Booking Confirmed!
         </h1>
         
-        <p className="text-gray-600 mb-8">
-          Thank you for booking the experience. We have received your booking and payment confirmation.
-          You will receive further details about the experience via SMS.
-        </p>
+        <div className="space-y-4 mb-8">
+          <p className="text-gray-600">
+            Thank you for booking the experience. We have received your booking and payment confirmation.
+          </p>
 
-        <Link
-          to="/"
-          className="inline-block bg-purple-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-purple-700 transition"
-        >
-          Return to Home
-        </Link>
+          <div className="flex items-center justify-center text-gray-600 space-x-2">
+            <Mail className="h-5 w-5" />
+            <p>A confirmation email has been sent to your registered email address.</p>
+          </div>
+
+          <div className="bg-purple-50 p-4 rounded-lg mt-4">
+            <p className="text-purple-700">
+              Please check your email for detailed information about the experience.
+              If you don't see the email, please check your spam folder.
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <Link
+            to="/"
+            className="inline-block w-full bg-purple-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-purple-700 transition"
+          >
+            Return to Home
+          </Link>
+        </div>
       </div>
     </div>
   );
