@@ -15,6 +15,7 @@ const ExperienceCard = ({ experience }) => {
   };
 
   const handleCardClick = () => {
+    window.scrollTo(0, 0);
     navigate(`/experience/${experience._id}`);
   };
 

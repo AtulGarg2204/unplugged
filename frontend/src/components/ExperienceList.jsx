@@ -1,7 +1,7 @@
 import React from 'react';
-import { Pencil, Trash2, Eye, EyeOff } from 'lucide-react';
+import { Pencil, Trash2, Eye, EyeOff} from 'lucide-react';
 
-const ExperienceList = ({ experiences, onEdit, onDelete, onToggleStatus }) => {
+const ExperienceList = ({ experiences, onEdit, onDelete, onToggleStatus, onViewBookings }) => {
   // Format date function
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -86,7 +86,14 @@ const ExperienceList = ({ experiences, onEdit, onDelete, onToggleStatus }) => {
                     </span>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                    <div className="flex space-x-2">
+                    <div className="flex items-center space-x-2">
+                      <button
+                        onClick={() => onViewBookings(experience)}
+                        className="inline-flex items-center px-2 py-1 border border-blue-600 text-blue-600 rounded hover:bg-blue-50"
+                        title="View Bookings"
+                      >
+                        View Bookings
+                      </button>
                       <button
                         onClick={() => onEdit(experience)}
                         className="text-indigo-600 hover:text-indigo-900"

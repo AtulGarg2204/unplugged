@@ -10,6 +10,13 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,16 +35,28 @@ const Navbar = () => {
           
           {/* Desktop menu */}
           <div className="hidden md:ml-6 md:flex md:items-center md:space-x-4">
+            <button
+              onClick={() => scrollToSection('about')}
+              className={`px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-purple-700 hover:bg-gray-50`}
+            >
+              About
+            </button>
             <Link
-              to="/"
+              to="/contact"
               className={`px-3 py-2 rounded-md text-sm font-medium ${
-                location.pathname === '/'
+                location.pathname === '/contact'
                   ? 'text-purple-700 bg-purple-50'
                   : 'text-gray-700 hover:text-purple-700 hover:bg-gray-50'
               }`}
             >
-              Home
+              Contact Us
             </Link>
+            <button
+              onClick={() => scrollToSection('host')}
+              className={`px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-purple-700 hover:bg-gray-50`}
+            >
+              Host
+            </button>
           </div>
           
           {/* Mobile menu button */}
@@ -60,17 +79,35 @@ const Navbar = () => {
       {/* Mobile menu */}
       <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <button
+            onClick={() => {
+              scrollToSection('about');
+              setIsMenuOpen(false);
+            }}
+            className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-700 hover:bg-gray-50"
+          >
+            About
+          </button>
           <Link
-            to="/"
+            to="/contact"
             className={`block px-3 py-2 rounded-md text-base font-medium ${
-              location.pathname === '/'
+              location.pathname === '/contact'
                 ? 'text-purple-700 bg-purple-50'
                 : 'text-gray-700 hover:text-purple-700 hover:bg-gray-50'
             }`}
             onClick={() => setIsMenuOpen(false)}
           >
-            Home
+            Contact Us
           </Link>
+          <button
+            onClick={() => {
+              scrollToSection('host');
+              setIsMenuOpen(false);
+            }}
+            className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-purple-700 hover:bg-gray-50"
+          >
+            Host
+          </button>
         </div>
       </div>
     </nav>

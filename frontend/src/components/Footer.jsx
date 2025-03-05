@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Twitter, Facebook } from 'lucide-react';
+import { Instagram, Mail, MessageSquare } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -12,29 +12,29 @@ const Footer = () => {
           
           <div className="mt-8 md:mt-0">
             <p className="text-center md:text-right text-gray-400">
-              Discover unique experiences in Bangalore
+              Unique experiences in Bangalore
             </p>
           </div>
         </div>
         
         <div className="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
           <div className="flex justify-center space-x-6 md:justify-start">
-            <a href="/footer" className="text-gray-400 hover:text-white">
+            <a href="https://www.instagram.com/be.unplugged?igsh=MTY5am03N25mcW05cg==" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
               <span className="sr-only">Instagram</span>
               <Instagram className="h-6 w-6" />
             </a>
-            <a href="/footer" className="text-gray-400 hover:text-white">
-              <span className="sr-only">Twitter</span>
-              <Twitter className="h-6 w-6" />
+            <a href="mailto:unpluggedevents2@gmail.com" className="text-gray-400 hover:text-white">
+              <span className="sr-only">Email</span>
+              <Mail className="h-6 w-6" />
             </a>
-            <a href="/footer" className="text-gray-400 hover:text-white">
-              <span className="sr-only">Facebook</span>
-              <Facebook className="h-6 w-6" />
+            <a href="https://wa.me/919036779767" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+              <span className="sr-only">WhatsApp</span>
+              <MessageSquare className="h-6 w-6" />
             </a>
           </div>
           
           <div className="mt-8 md:mt-0">
-            <p className="text-center md:text-right text-gray-400">
+            <p className="text-base text-gray-400">
               &copy; {new Date().getFullYear()} Unplugged. All rights reserved.
             </p>
           </div>

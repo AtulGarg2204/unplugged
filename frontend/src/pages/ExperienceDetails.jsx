@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { Instagram, MapPin, ArrowLeft } from 'lucide-react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { Instagram, MapPin, ArrowLeft, Loader2 } from 'lucide-react';
 import axios from 'axios';
 
 const ExperienceDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [experience, setExperience] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedImage, setSelectedImage] = useState(0);
   const [thumbnails, setThumbnails] = useState([]);
+  const [isBooking, setIsBooking] = useState(false);
 
   useEffect(() => {
     const fetchExperience = async () => {
@@ -51,6 +53,14 @@ const ExperienceDetails = () => {
 
   const formatTime = (timeString) => {
     return timeString || '';
+  };
+
+  const handleBooking = () => {
+    setIsBooking(true);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      navigate(`/book-experience/${id}`);
+    }, 1500); // 1.5 seconds delay
   };
 
   if (loading) return (
@@ -158,12 +168,20 @@ const ExperienceDetails = () => {
             )}
           </div>
           
-          <Link 
-            to={`/book-experience/${id}`}
-            className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-8 rounded-md transition w-full text-center"
+          <button 
+            onClick={handleBooking}
+            disabled={isBooking}
+            className="inline-flex items-center justify-center bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-8 rounded-md transition w-full"
           >
-            Book this Experience
-          </Link>
+            {isBooking ? (
+              <>
+                <Loader2 className="animate-spin -ml-1 mr-3 h-5 w-5" />
+                Booking...
+              </>
+            ) : (
+              'Book this Experience'
+            )}
+          </button>
         </div>
       </div>
       

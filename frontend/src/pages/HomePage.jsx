@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, Calendar, Users } from 'lucide-react';
+import { MapPin, Calendar, Users, MessageSquare } from 'lucide-react';
 
 import Hero from '../components/Hero';
 import ExperienceCard from '../components/ExperienceCard';
@@ -66,7 +66,7 @@ const HomePage = () => {
       {/* Overview/Introduction Section */}
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div id="about" className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">About Unplugged</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Unplugged is a platform for discovering and booking unique experiences in Bangalore. 
@@ -111,15 +111,18 @@ const HomePage = () => {
       {/* Call to Action */}
       <div className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-purple-50 rounded-lg p-8 text-center">
+          <div id="host" className="bg-purple-50 rounded-lg p-8 text-center">
             <h3 className="text-2xl font-bold text-purple-700 mb-4">Want to host an experience?</h3>
             <p className="text-purple-600 mb-6">
               We're always looking for talented artists and creators to host experiences on Unplugged.
             </p>
             <a 
-              href="mailto:contact@unplugged.com" 
-              className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-6 rounded-md transition"
+              href="https://wa.me/919036779767?text=Hi%20Unplugged,%20I'm%20interested%20in%20hosting%20an%20experience" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-6 rounded-md transition"
             >
+              <MessageSquare className="mr-2 h-5 w-5" />
               Get in Touch
             </a>
           </div>
