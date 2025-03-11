@@ -42,6 +42,18 @@ const Hero = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
+  const handleExploreClick = (e) => {
+    e.preventDefault();
+    const experiencesSection = document.getElementById('experiences');
+    const offset = 80; // Offset from the top (adjust as needed)
+    const targetPosition = experiencesSection.getBoundingClientRect().top + window.pageYOffset - offset;
+    
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div className="relative h-[600px] overflow-hidden">
       {/* Slides */}
@@ -65,12 +77,12 @@ const Hero = () => {
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mb-8">
               {slide.description}
             </p>
-            <a
-              href="#experiences"
+            <button
+              onClick={handleExploreClick}
               className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-md transition-colors duration-300 text-lg"
             >
               Explore Experiences
-            </a>
+            </button>
           </div>
         </div>
       ))}
