@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { Instagram, MapPin, ArrowLeft, Loader2 } from 'lucide-react';
+import { Instagram, MapPin, ArrowLeft, Loader2, MessageSquare } from 'lucide-react';
 import axios from 'axios';
 
 const ExperienceDetails = () => {
@@ -61,6 +61,10 @@ const ExperienceDetails = () => {
       window.scrollTo(0, 0);
       navigate(`/book-experience/${id}`);
     }, 1500); // 1.5 seconds delay
+  };
+
+  const navigateToFeedback = () => {
+    navigate(`/feedback/${id}`);
   };
 
   if (loading) return (
@@ -168,20 +172,30 @@ const ExperienceDetails = () => {
             )}
           </div>
           
-          <button 
-            onClick={handleBooking}
-            disabled={isBooking}
-            className="inline-flex items-center justify-center bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-8 rounded-md transition w-full"
-          >
-            {isBooking ? (
-              <>
-                <Loader2 className="animate-spin -ml-1 mr-3 h-5 w-5" />
-                Booking...
-              </>
-            ) : (
-              'Book this Experience'
-            )}
-          </button>
+          <div className="space-y-3">
+            <button 
+              onClick={handleBooking}
+              disabled={isBooking}
+              className="inline-flex items-center justify-center bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-8 rounded-md transition w-full"
+            >
+              {isBooking ? (
+                <>
+                  <Loader2 className="animate-spin -ml-1 mr-3 h-5 w-5" />
+                  Booking...
+                </>
+              ) : (
+                'Book this Experience'
+              )}
+            </button>
+            
+            <button 
+              onClick={navigateToFeedback}
+              className="inline-flex items-center justify-center bg-purple-100 hover:bg-purple-200 text-purple-800 font-medium py-2 px-4 rounded-md transition text-sm w-auto mx-auto"
+            >
+              <MessageSquare className="mr-1 h-4 w-4" />
+              Give Your Feedback
+            </button>
+          </div>
         </div>
       </div>
       
@@ -275,4 +289,4 @@ const ExperienceDetails = () => {
   );
 };
 
-export default ExperienceDetails; 
+export default ExperienceDetails;

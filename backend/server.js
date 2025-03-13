@@ -13,6 +13,7 @@ const app = express();
 // Middleware
 const allowedOrigins = [
   'https://unplugged123.netlify.app',
+  'https://unplugged-oqyy.vercel.app',
   'https://unplugged-1.vercel.app',
   'http://localhost:3000' // Add your local development URL
 ];
@@ -35,9 +36,17 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Import routes
 const experienceRoutes = require('./routes/Experiences');
 const bookingRoutes = require('./routes/bookings');
+const contactRoutes = require('./routes/contact');
+const artistRoutes=require('./routes/artists');
+const spaceRoutes=require('./routes/spaces');
+const feedbackRoutes=require('./routes/feedback');
 // Use routes
 app.use('/api/experiences', experienceRoutes);
 app.use('/api/bookings', bookingRoutes);
+app.use('/api/contact', contactRoutes);
+app.use('/api/artists', artistRoutes);
+app.use('/api/spaces', spaceRoutes);
+app.use('/api/feedback', feedbackRoutes);
 
 // Connect to MongoDB
 mongoose

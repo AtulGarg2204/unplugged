@@ -10,7 +10,10 @@ import BookingForm from './pages/BookingForm';
 import BookingConfirmation from './pages/BookingConfirmation';
 import ProtectedRoute from './components/ProtectedRoute';
 import './index.css';
-
+import ContactUs from './components/ContactUs';
+import ArtistRegistration from './components/ArtistRegistration';
+import SpaceRegistration from './components/SpaceRegistration';
+import Feedback from './components/Feedback';
 function App() {
   return (
     <Router>
@@ -25,6 +28,10 @@ function App() {
                 <AdminPage />
               </ProtectedRoute>
             } />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/partner-registration" element={<ArtistRegistration />} />
+            <Route path="/feedback/:id" element={<Feedback />} />
+            <Route path="/space-registration" element={<SpaceRegistration />} />
             <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
             <Route path="/experience/:id" element={<ExperienceDetails />} />
             <Route path="/book-experience/:id" element={<BookingForm />} />
