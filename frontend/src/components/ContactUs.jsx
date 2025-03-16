@@ -86,6 +86,15 @@ const ContactUs = () => {
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
+       {/* Introduction */}
+      <div className="mb-8">
+        <h3 className="text-lg font-medium mb-2 text-purple-900">
+          Have a question about an upcoming experience, looking for career opportunities, or simply want to get in touch?
+        </h3>
+        <p className="text-gray-700">
+          Go ahead and fill out the form below; our team shall look into your enquiry and get back with a response at the earliest.
+        </p>
+      </div>
       {/* Form Section */}
       <form onSubmit={handleSubmit} className="space-y-6 mb-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
