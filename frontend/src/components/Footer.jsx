@@ -1,9 +1,11 @@
+
+
 // import React from 'react';
 // import { Instagram, Mail, MessageSquare } from 'lucide-react';
 
 // const Footer = () => {
 //   return (
-//     <footer className="bg-gray-800 text-white">
+//     <footer className="bg-black text-white border-t border-gray-900">
 //       <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
 //         <div className="md:flex md:items-center md:justify-between">
 //           <div className="flex justify-center md:justify-start">
@@ -17,19 +19,19 @@
 //           </div>
 //         </div>
         
-//         <div className="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
+//         <div className="mt-8 border-t border-gray-800 pt-8 md:flex md:items-center md:justify-between">
 //           <div className="flex justify-center space-x-6 md:justify-start">
-//             <a href="https://www.instagram.com/be.unplugged?igsh=MTY5am03N25mcW05cg==" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+//             <a href="https://www.instagram.com/be.unplugged?igsh=MTY5am03N25mcW05cg==" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-teal-400 transition-colors duration-300">
 //               <span className="sr-only">Instagram</span>
-//               <Instagram className="h-6 w-6" />
+//               <Instagram className="h-6 w-6 transform transition-transform duration-300 hover:scale-110" />
 //             </a>
-//             <a href="mailto:unpluggedevents2@gmail.com" className="text-gray-400 hover:text-white">
+//             <a href="mailto:unpluggedevents2@gmail.com" className="text-gray-400 hover:text-teal-400 transition-colors duration-300">
 //               <span className="sr-only">Email</span>
-//               <Mail className="h-6 w-6" />
+//               <Mail className="h-6 w-6 transform transition-transform duration-300 hover:scale-110" />
 //             </a>
-//             <a href="https://wa.me/919036779767" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+//             <a href="https://wa.me/919036779767" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-teal-400 transition-colors duration-300">
 //               <span className="sr-only">WhatsApp</span>
-//               <MessageSquare className="h-6 w-6" />
+//               <MessageSquare className="h-6 w-6 transform transition-transform duration-300 hover:scale-110" />
 //             </a>
 //           </div>
           
@@ -45,51 +47,61 @@
 // };
 
 // export default Footer;
-
-import React from 'react';
-import { Instagram, Mail, MessageSquare } from 'lucide-react';
+import { Instagram, Mail, MessageSquare } from "lucide-react"
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white border-t border-gray-900">
-      <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-black text-white border-t border-gray-800">
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="md:flex md:items-center md:justify-between">
           <div className="flex justify-center md:justify-start">
-            <h2 className="text-2xl font-bold">Unplugged</h2>
+            <h2 className="text-3xl font-bold gradient-text font-['Playfair_Display']">Unplugged</h2>
           </div>
-          
+
           <div className="mt-8 md:mt-0">
-            <p className="text-center md:text-right text-gray-400">
-              Unique experiences in Bangalore
-            </p>
+            <p className="text-center md:text-right text-gray-400 font-light italic">Unique experiences in Bangalore</p>
           </div>
         </div>
-        
-        <div className="mt-8 border-t border-gray-800 pt-8 md:flex md:items-center md:justify-between">
-          <div className="flex justify-center space-x-6 md:justify-start">
-            <a href="https://www.instagram.com/be.unplugged?igsh=MTY5am03N25mcW05cg==" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-teal-400 transition-colors duration-300">
+
+        <div className="mt-10 border-t border-gray-800 pt-8 md:flex md:items-center md:justify-between">
+          <div className="flex justify-center space-x-8 md:justify-start">
+            <a
+              href="https://www.instagram.com/be.unplugged?igsh=MTY5am03N25mcW05cg=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-purple-400 transition-all duration-300"
+            >
               <span className="sr-only">Instagram</span>
-              <Instagram className="h-6 w-6 transform transition-transform duration-300 hover:scale-110" />
+              <Instagram className="h-6 w-6 transform transition-transform duration-300 hover:scale-125" />
             </a>
-            <a href="mailto:unpluggedevents2@gmail.com" className="text-gray-400 hover:text-teal-400 transition-colors duration-300">
+            <a
+              href="mailto:unpluggedevents2@gmail.com"
+              className="text-gray-400 hover:text-purple-400 transition-all duration-300"
+            >
               <span className="sr-only">Email</span>
-              <Mail className="h-6 w-6 transform transition-transform duration-300 hover:scale-110" />
+              <Mail className="h-6 w-6 transform transition-transform duration-300 hover:scale-125" />
             </a>
-            <a href="https://wa.me/919036779767" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-teal-400 transition-colors duration-300">
+            <a
+              href="https://wa.me/919036779767"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-purple-400 transition-all duration-300"
+            >
               <span className="sr-only">WhatsApp</span>
-              <MessageSquare className="h-6 w-6 transform transition-transform duration-300 hover:scale-110" />
+              <MessageSquare className="h-6 w-6 transform transition-transform duration-300 hover:scale-125" />
             </a>
           </div>
-          
+
           <div className="mt-8 md:mt-0">
-            <p className="text-base text-gray-400">
+            <p className="text-base text-gray-400 font-light">
               &copy; {new Date().getFullYear()} Unplugged. All rights reserved.
             </p>
           </div>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
+
