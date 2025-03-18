@@ -42,52 +42,82 @@ const ExperienceCard = ({ experience }) => {
                transform: isHovered ? 'translateY(0)' : 'translateY(5px)',
                opacity: isHovered ? 1 : 0.9
              }}>
-          <h3 className="text-xl text-white mb-1 font-semibold animate-glow">
+          <h3 
+            className="text-xl text-white mb-1 animate-glow"
+            style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 500, letterSpacing: '0.5px' }}
+          >
             {experience.name}
           </h3>
-          <p className="text-white/80 font-light text-sm transition-all duration-500"
-             style={{
-               transform: isHovered ? 'translateY(0)' : 'translateY(5px)',
-               opacity: isHovered ? 1 : 0.8
-             }}>
+          <p 
+            className="text-white/80 text-sm transition-all duration-500"
+            style={{
+              fontFamily: "'Bayon', sans-serif", 
+              fontWeight: 300, 
+              letterSpacing: '0.3px',
+              transform: isHovered ? 'translateY(0)' : 'translateY(5px)',
+              opacity: isHovered ? 1 : 0.8
+            }}
+          >
             {experience.shortDescription}
           </p>
         </div>
       </div>
 
       <div className="p-4 bg-[#0a0a13]">
-        <p className="font-medium text-purple-400 mb-3 italic text-sm transition-all duration-500"
-           style={{
-             transform: isHovered ? 'translateX(5px)' : 'translateX(0)'
-           }}>
+        <p 
+          className="text-purple-400 mb-3 italic text-lg transition-all duration-500"
+          style={{
+            fontFamily: "'Bayon', sans-serif", 
+            fontWeight: 400,
+            letterSpacing: '0.4px',
+            transform: isHovered ? 'translateX(5px)' : 'translateX(0)'
+          }}
+        >
           {experience.artistName}
         </p>
 
-        <div className="flex items-center mt-2 text-gray-300 text-sm transition-all duration-300"
-             style={{
-               opacity: isHovered ? 1 : 0.8
-             }}>
+        <div 
+          className="flex items-center mt-2 text-gray-300 text-sm transition-all duration-300"
+          style={{
+            fontFamily: "'Bayon', sans-serif",
+            fontWeight: 300,
+            letterSpacing: '0.2px',
+            opacity: isHovered ? 1 : 0.8
+          }}
+        >
           <Calendar className="mr-2 h-4 w-4 text-purple-400 transition-transform duration-500"
                    style={{
                      transform: isHovered ? 'scale(1.1) rotate(-5deg)' : 'scale(1) rotate(0)'
                    }} />
-          <span className="font-light">
+          <span>
             {formatDate(experience.date)} ({experience.dayOfWeek})
           </span>
         </div>
 
-        <div className="flex items-center mt-2 text-gray-300 text-sm transition-all duration-300"
-             style={{
-               opacity: isHovered ? 1 : 0.8
-             }}>
+        <div 
+          className="flex items-center mt-2 text-gray-300 text-sm transition-all duration-300"
+          style={{
+            fontFamily: "'Bayon', sans-serif",
+            fontWeight: 300,
+            letterSpacing: '0.2px',
+            opacity: isHovered ? 1 : 0.8
+          }}
+        >
           <Clock className="mr-2 h-4 w-4 text-purple-400 transition-transform duration-500"
                 style={{
                   transform: isHovered ? 'scale(1.1) rotate(-5deg)' : 'scale(1) rotate(0)'
                 }} />
-          <span className="font-light">{experience.time}</span>
+          <span>{experience.time}</span>
         </div>
 
-        <div className="flex items-center mt-3 font-semibold text-white p-2 rounded-lg transition-all duration-500 price-highlight">
+        <div 
+          className="flex items-center mt-3 font-semibold text-white p-2 rounded-lg transition-all duration-500 price-highlight"
+          style={{
+            fontFamily: "'Bayon', sans-serif",
+            fontWeight: 500,
+            letterSpacing: '0.4px'
+          }}
+        >
           <Wallet className="mr-2 h-4 w-4 text-purple-400 transition-transform duration-500"
                  style={{
                    transform: isHovered ? 'scale(1.1) rotate(-5deg)' : 'scale(1) rotate(0)'

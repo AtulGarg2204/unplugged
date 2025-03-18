@@ -169,7 +169,7 @@ const AdminPage = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-40">
       <div className="md:flex md:items-center md:justify-between mb-6">
         <h1 className="text-3xl font-bold text-gray-900">Experience Management</h1>
         

@@ -15,7 +15,7 @@ const allowedOrigins = [
   'https://unplugged123.netlify.app',
   'https://unplugged-oqyy.vercel.app',
   'https://unplugged-1.vercel.app',
-  'http://localhost:3005' // Add your local development URL
+  'http://localhost:3000' // Add your local development URL
 ];
 
 app.use(cors({

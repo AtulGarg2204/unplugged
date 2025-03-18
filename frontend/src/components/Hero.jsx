@@ -97,15 +97,22 @@ const Hero = () => {
             <div className={`transform transition-all duration-1000 delay-300 ${
               index === currentSlide && !isChanging ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}>
-              <h1 className="text-3xl md:text-4xl text-white mb-4 max-w-4xl tracking-wide uppercase font-light animate-glow">
+              <h1 
+                className="text-3xl md:text-4xl text-white mb-4 max-w-4xl tracking-wide uppercase animate-glow"
+                style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 500, letterSpacing: '0.5px' }}
+              >
                 {slide.title}
               </h1>
-              <p className="text-xl md:text-2xl text-white/90 max-w-2xl mb-8">
+              <p 
+                className="text-xl md:text-2xl text-white/90 max-w-2xl mb-8"
+                style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
+              >
                 {slide.description}
               </p>
               <button
                 onClick={handleExploreClick}
                 className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold py-3 px-8 rounded-md transition-all duration-300 text-lg transform hover:scale-105 hover:shadow-lg pulse-button"
+                style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 400, letterSpacing: '0.5px' }}
               >
                 Explore Experiences
               </button>

@@ -120,7 +120,9 @@ const ExperienceForm = ({ experience, onSubmit, submitButtonText }) => {
     }
     
     // URL validations
-    const urlPattern = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
+    // Replace the current URL pattern with a more flexible one
+// URL validations - Updated to be more accommodating
+const urlPattern = /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w-./?%&=+]*)?$/;
     
     if (formData.artistInstagramLink && !urlPattern.test(formData.artistInstagramLink)) {
       newErrors.artistInstagramLink = 'Please enter a valid URL';

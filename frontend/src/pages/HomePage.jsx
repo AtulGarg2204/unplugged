@@ -67,7 +67,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="bg-black min-h-screen font-['Montserrat',sans-serif]">
+    <div className="bg-black min-h-screen" style={{ fontFamily: "'Bayon', sans-serif" }}>
       {/* Hero Section */}
       <Hero />
 
@@ -76,13 +76,22 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div id="experiences" className={`mb-16 ${visibleSections.experiences ? 'fade-in' : 'fade-in-slow'}`}>
             <div className="mb-12 text-left pulse-bg">
-              <h3 className="text-purple-400 text-base mb-2 font-medium italic animate-glow">
+              <h3 
+                className="text-purple-400 text-base mb-2 italic animate-glow"
+                style={{ fontWeight: 400, letterSpacing: '0.4px' }}
+              >
                 Discover
               </h3>
-              <h2 className="text-3xl md:text-4xl text-white mb-3 font-light tracking-wide uppercase animate-glow">
+              <h2 
+                className="text-3xl md:text-4xl text-white mb-3 tracking-wide uppercase animate-glow"
+                style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+              >
                 Upcoming Experiences
               </h2>
-              <p className="text-gray-400 mb-10 text-base">
+              <p 
+                className="text-gray-400 mb-10 text-base"
+                style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+              >
                 Discover and book unique experiences curated by talented local artists in Bangalore
               </p>
             </div>
@@ -92,9 +101,17 @@ const HomePage = () => {
                 <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-purple-500"></div>
               </div>
             ) : error ? (
-              <div className="bg-red-900/20 border border-red-800 text-red-400 px-6 py-4 rounded-lg">{error}</div>
+              <div 
+                className="bg-red-900/20 border border-red-800 text-red-400 px-6 py-4 rounded-lg"
+                style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+              >
+                {error}
+              </div>
             ) : experiences.length === 0 ? (
-              <div className="bg-black border border-gray-800 text-gray-300 px-6 py-12 rounded-lg text-center">
+              <div 
+                className="bg-black border border-gray-800 text-gray-300 px-6 py-12 rounded-lg text-center"
+                style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+              >
                 <p className="text-xl">No upcoming experiences at the moment.</p>
                 <p className="mt-2 text-gray-400">Check back soon for new and exciting events!</p>
               </div>
@@ -116,14 +133,23 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div id="about" className={`text-center mb-16 ${visibleSections.about ? 'fade-in' : 'fade-in-slow'}`}>
             <div className="mb-6 text-center relative pulse-bg">
-              <h3 className="text-purple-400 text-base mb-2 font-medium italic animate-glow">
+              <h3 
+                className="text-purple-400 text-base mb-2 italic animate-glow"
+                style={{ fontWeight: 400, letterSpacing: '0.4px' }}
+              >
                 Our Story
               </h3>
-              <h2 className="text-3xl md:text-4xl text-white mb-4 font-light tracking-wide uppercase animate-glow">
+              <h2 
+                className="text-3xl md:text-4xl text-white mb-4 tracking-wide uppercase animate-glow"
+                style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+              >
                 About Unplugged
               </h2>
             </div>
-            <p className="text-gray-300 max-w-3xl mx-auto mt-4 text-lg italic">
+            <p 
+              className="text-gray-300 max-w-3xl mx-auto mt-4 text-lg italic"
+              style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+            >
               Unplugged is a platform for discovering and booking unique experiences in Bangalore. Connect with local
               artists, learn new skills, and create lasting memories.
             </p>
@@ -134,10 +160,16 @@ const HomePage = () => {
               <div className="bg-gradient-to-br from-purple-500 to-indigo-700 w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-4 transform transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110 float-icon">
                 <MapPin className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl text-white mb-3 font-light tracking-wide animate-glow">
+              <h3 
+                className="text-xl text-white mb-3 tracking-wide animate-glow"
+                style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+              >
                 Local Experiences
               </h3>
-              <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 font-light">
+              <p 
+                className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300"
+                style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+              >
                 Discover handpicked experiences hosted by talented local artists and creators in Bangalore.
               </p>
             </div>
@@ -146,10 +178,16 @@ const HomePage = () => {
               <div className="bg-gradient-to-br from-purple-500 to-indigo-700 w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-4 transform transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110 float-icon">
                 <Calendar className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl text-white mb-3 font-light tracking-wide animate-glow">
+              <h3 
+                className="text-xl text-white mb-3 tracking-wide animate-glow"
+                style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+              >
                 Curated Events
               </h3>
-              <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 font-light">
+              <p 
+                className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300"
+                style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+              >
                 Join workshops, classes, and events that inspire creativity and foster community connections.
               </p>
             </div>
@@ -158,10 +196,16 @@ const HomePage = () => {
               <div className="bg-gradient-to-br from-purple-500 to-indigo-700 w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-4 transform transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110 float-icon">
                 <Users className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl text-white mb-3 font-light tracking-wide animate-glow">
+              <h3 
+                className="text-xl text-white mb-3 tracking-wide animate-glow"
+                style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+              >
                 Intimate Settings
               </h3>
-              <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 font-light">
+              <p 
+                className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300"
+                style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+              >
                 Enjoy small-group experiences that allow for personal interaction and hands-on learning.
               </p>
             </div>
@@ -183,14 +227,23 @@ const HomePage = () => {
             </div>
 
             <div className="relative z-10">
-              <h3 className="text-lg text-purple-400 italic mb-2 animate-glow">
+              <h3 
+                className="text-lg text-purple-400 italic mb-2 animate-glow"
+                style={{ fontWeight: 400, letterSpacing: '0.4px' }}
+              >
                 Join Us
               </h3>
-              <h2 className="text-2xl text-white mb-4 font-light tracking-wide animate-glow">
+              <h2 
+                className="text-2xl text-white mb-4 tracking-wide animate-glow"
+                style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+              >
                 Want to host an experience?
               </h2>
 
-              <p className="text-gray-300 mb-8 max-w-2xl mx-auto font-light">
+              <p 
+                className="text-gray-300 mb-8 max-w-2xl mx-auto"
+                style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+              >
                 We're always looking for talented artists and creators to host experiences on Unplugged. Share your
                 passion and connect with an engaged audience.
               </p>
@@ -199,6 +252,7 @@ const HomePage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20 pulse-button"
+                style={{ fontWeight: 400, letterSpacing: '0.5px' }}
               >
                 <MessageSquare className="mr-2 h-5 w-5" />
                 Get in Touch

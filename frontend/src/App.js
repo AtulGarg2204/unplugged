@@ -14,6 +14,7 @@ import ContactUs from './components/ContactUs';
 import ArtistRegistration from './components/ArtistRegistration';
 import SpaceRegistration from './components/SpaceRegistration';
 import Feedback from './components/Feedback';
+import ScreenTimeCalculator from './components/ScreenTimeCalculator';
 function App() {
   return (
     <Router>
@@ -36,6 +37,7 @@ function App() {
             <Route path="/experience/:id" element={<ExperienceDetails />} />
             <Route path="/book-experience/:id" element={<BookingForm />} />
             <Route path="/booking-confirmation" element={<BookingConfirmation />} />
+            <Route path="/calculator" element={<ScreenTimeCalculator />} />
           </Routes>
         </main>
         <Footer />
