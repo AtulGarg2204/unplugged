@@ -63,7 +63,7 @@ const Navbar = () => {
             <button
               onClick={() => scrollToSection('experiences')}
               className="px-4 py-2 rounded-md text-sm font-medium text-white hover:text-purple-300 transition-all duration-300 relative group"
-              style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 400, letterSpacing: '0.5px' }}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.5px' }}
             >
               Experiences
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
@@ -72,7 +72,7 @@ const Navbar = () => {
             <button
               onClick={() => scrollToSection('about')}
               className="px-4 py-2 rounded-md text-sm font-medium text-white hover:text-purple-300 transition-all duration-300 relative group"
-              style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 400, letterSpacing: '0.5px' }}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.5px' }}
             >
               About
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
@@ -85,7 +85,7 @@ const Navbar = () => {
                   ? 'text-purple-400'
                   : 'text-white hover:text-purple-300'
               }`}
-              style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 400, letterSpacing: '0.5px' }}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.5px' }}
             >
               Contact Us
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
@@ -98,7 +98,7 @@ const Navbar = () => {
                   ? 'text-purple-400'
                   : 'text-white hover:text-purple-300'
               }`}
-              style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 400, letterSpacing: '0.5px' }}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.5px' }}
             >
               Calculator
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
@@ -107,7 +107,7 @@ const Navbar = () => {
             <button
               onClick={() => scrollToSection('host')}
               className={`ml-3 px-5 py-2 rounded-full text-sm font-medium text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20`}
-              style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 400, letterSpacing: '0.5px' }}
+              style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 400, letterSpacing: '0.5px' }}
             >
               Host an Experience
             </button>
@@ -143,7 +143,7 @@ const Navbar = () => {
               setIsMenuOpen(false);
             }}
             className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:text-purple-300 hover:bg-gray-900 transition-colors duration-300"
-            style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 400 }}
+            style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400 }}
           >
             Experiences
           </button>
@@ -154,7 +154,7 @@ const Navbar = () => {
               setIsMenuOpen(false);
             }}
             className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:text-purple-300 hover:bg-gray-900 transition-colors duration-300"
-            style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 400 }}
+            style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400 }}
           >
             About
           </button>
@@ -167,7 +167,7 @@ const Navbar = () => {
                 : 'text-white hover:text-purple-300 hover:bg-gray-900'
             }`}
             onClick={() => setIsMenuOpen(false)}
-            style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 400 }}
+            style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400 }}
           >
             Contact Us
           </Link>
@@ -182,7 +182,7 @@ const Navbar = () => {
                 ? 'text-purple-400 bg-gray-800'
                 : 'text-white hover:text-purple-300 hover:bg-gray-900'
             }`}
-            style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 400 }}
+            style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400 }}
           >
             Calculator
           </button>
@@ -193,7 +193,7 @@ const Navbar = () => {
               setIsMenuOpen(false);
             }}
             className="block w-full text-left px-3 py-3 rounded-md text-base font-medium text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 transition-colors duration-300"
-            style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 400 }}
+            style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 400 }}
           >
             Host an Experience
           </button>

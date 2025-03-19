@@ -118,7 +118,7 @@ const Feedback = () => {
   );
 
   if (success) return (
-    <div className="min-h-screen bg-black text-white flex flex-col justify-center items-center p-4" style={{ fontFamily: "'Bayon', sans-serif" }}>
+    <div className="min-h-screen bg-black text-white flex flex-col justify-center items-center p-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <div className="max-w-md w-full bg-[#12121e] rounded-xl shadow-lg p-8 text-center border border-gray-800 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20">
           <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500 rounded-full filter blur-3xl -translate-y-1/2 translate-x-1/2"></div>
@@ -132,19 +132,19 @@ const Feedback = () => {
           
           <h2 
             className="text-2xl text-white mb-4 tracking-wide uppercase animate-glow"
-            style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+            style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
           >
             Thank You!
           </h2>
           <p 
             className="text-gray-300 mb-6"
-            style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+            style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
           >
             Your feedback has been successfully submitted.
           </p>
           <p 
             className="text-gray-400 mb-6"
-            style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+            style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
           >
             Redirecting you back to the experience page...
           </p>
@@ -152,7 +152,7 @@ const Feedback = () => {
           <Link 
             to={`/experience/${id}`}
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20"
-            style={{ fontWeight: 400, letterSpacing: '0.4px' }}
+            style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.4px' }}
           >
             Return to Experience
           </Link>
@@ -162,12 +162,12 @@ const Feedback = () => {
   );
 
   return (
-    <div className="min-h-screen bg-black text-white pb-16 pt-40 px-4" style={{ fontFamily: "'Bayon', sans-serif" }}>
+    <div className="min-h-screen bg-black text-white pb-16 pt-40 px-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <div className="container mx-auto max-w-4xl">
         <Link 
           to={`/experience/${id}`} 
           className="inline-flex items-center text-gray-300 hover:text-purple-400 mb-8 transition-colors duration-300 group"
-          style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+          style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
         >
           <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
           Back to Experience
@@ -188,14 +188,14 @@ const Feedback = () => {
                 <div>
                   <h1 
                     className="text-2xl text-white animate-glow"
-                    style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                    style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
                   >
                     Share Your Feedback
                   </h1>
                   {experience && (
                     <p 
                       className="text-gray-400"
-                      style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                      style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                     >
                       About: {experience.name}
                     </p>
@@ -206,7 +206,7 @@ const Feedback = () => {
               {error && (
                 <div 
                   className="bg-red-900/20 text-red-400 p-4 rounded-lg mb-6 border border-red-800/50"
-                  style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                  style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                 >
                   {error}
                 </div>
@@ -217,7 +217,7 @@ const Feedback = () => {
                 <div className="space-y-6">
                   <h2 
                     className="text-xl text-white mb-4 border-b border-gray-800 pb-2 animate-glow"
-                    style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                    style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
                   >
                     Personal Information
                   </h2>
@@ -227,7 +227,7 @@ const Feedback = () => {
                       <label 
                         htmlFor="name" 
                         className="block text-sm text-gray-400 mb-2"
-                        style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.3px' }}
                       >
                         Name <span className="text-purple-400">*</span>
                       </label>
@@ -240,7 +240,7 @@ const Feedback = () => {
                         required
                         className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
                         placeholder="Your name"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       />
                     </div>
 
@@ -248,7 +248,7 @@ const Feedback = () => {
                       <label 
                         htmlFor="email" 
                         className="block text-sm text-gray-400 mb-2"
-                        style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.3px' }}
                       >
                         Email ID <span className="text-purple-400">*</span>
                       </label>
@@ -261,7 +261,7 @@ const Feedback = () => {
                         required
                         className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
                         placeholder="Your email"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       />
                     </div>
                   </div>
@@ -271,7 +271,7 @@ const Feedback = () => {
                       <label 
                         htmlFor="age"
                         className="block text-sm text-gray-400 mb-2"
-                        style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.3px' }}
                       >
                         Age <span className="text-purple-400">*</span>
                       </label>
@@ -286,7 +286,7 @@ const Feedback = () => {
                         max="120"
                         className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
                         placeholder="Your age"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       />
                     </div>
 
@@ -294,7 +294,7 @@ const Feedback = () => {
                       <label 
                         htmlFor="occupation"
                         className="block text-sm text-gray-400 mb-2"
-                        style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.3px' }}
                       >
                         Occupation <span className="text-purple-400">*</span>
                       </label>
@@ -307,7 +307,7 @@ const Feedback = () => {
                         required
                         className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
                         placeholder="Your occupation"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       />
                     </div>
 
@@ -315,7 +315,7 @@ const Feedback = () => {
                       <label 
                         htmlFor="area"
                         className="block text-sm text-gray-400 mb-2"
-                        style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.3px' }}
                       >
                         Area of Residence
                       </label>
@@ -327,7 +327,7 @@ const Feedback = () => {
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
                         placeholder="E.g. Koramangala, Indiranagar"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       />
                     </div>
                   </div>
@@ -337,14 +337,14 @@ const Feedback = () => {
                 <div>
                   <h2 
                     className="text-xl text-white mb-4 border-b border-gray-800 pb-2 animate-glow"
-                    style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                    style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
                   >
                     Your Experience
                   </h2>
                   
                   <label 
                     className="block text-sm text-gray-400 mb-3"
-                    style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                    style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.3px' }}
                   >
                     How would you rate your overall experience? <span className="text-purple-400">*</span>
                   </label>
@@ -365,7 +365,7 @@ const Feedback = () => {
                     ))}
                     <span 
                       className="ml-2 text-gray-400 self-center"
-                      style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                      style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                     >
                       {formData.rating > 0 ? `${formData.rating}/5` : 'Select rating'}
                     </span>
@@ -376,7 +376,7 @@ const Feedback = () => {
                       <label 
                         htmlFor="enjoyedMost"
                         className="block text-sm text-gray-400 mb-2"
-                        style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.3px' }}
                       >
                         What did you enjoy the most about the workshop? <span className="text-purple-400">*</span>
                       </label>
@@ -389,7 +389,7 @@ const Feedback = () => {
                         rows="3"
                         className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
                         placeholder="Share what you loved about the experience"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       ></textarea>
                     </div>
 
@@ -397,7 +397,7 @@ const Feedback = () => {
                       <label 
                         htmlFor="improvements"
                         className="block text-sm text-gray-400 mb-2"
-                        style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.3px' }}
                       >
                         What could have been better? <span className="text-purple-400">*</span>
                       </label>
@@ -410,7 +410,7 @@ const Feedback = () => {
                         rows="3"
                         className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
                         placeholder="Your suggestions for improvement"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       ></textarea>
                     </div>
                   </div>
@@ -420,7 +420,7 @@ const Feedback = () => {
                 <div>
                   <h2 
                     className="text-xl text-white mb-4 border-b border-gray-800 pb-2 animate-glow"
-                    style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                    style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
                   >
                     Your Event Habits
                   </h2>
@@ -429,7 +429,7 @@ const Feedback = () => {
                     <div>
                       <label 
                         className="block text-sm text-gray-400 mb-3"
-                        style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.3px' }}
                       >
                         How often do you typically go for social/learning events in Bangalore? <span className="text-purple-400">*</span>
                       </label>
@@ -454,7 +454,7 @@ const Feedback = () => {
                             <label 
                               htmlFor={`frequency-${option.value}`} 
                               className="text-gray-300 hover:text-white transition-colors"
-                              style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                              style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                             >
                               {option.label}
                             </label>
@@ -466,7 +466,7 @@ const Feedback = () => {
                     <div>
                       <label 
                         className="block text-sm text-gray-400 mb-3"
-                        style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.3px' }}
                       >
                         Why did you decide to attend this workshop? (Select all that apply) <span className="text-purple-400">*</span>
                       </label>
@@ -496,7 +496,7 @@ const Feedback = () => {
                             <label 
                               htmlFor={`reason-${reason.value}`} 
                               className="text-gray-300 group-hover:text-white transition-colors"
-                              style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                              style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                             >
                               {reason.label}
                             </label>
@@ -515,7 +515,7 @@ const Feedback = () => {
                           <label 
                             htmlFor="reason-other" 
                             className="text-gray-300 mr-2"
-                            style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                            style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                           >
                             Other:
                           </label>
@@ -526,7 +526,7 @@ const Feedback = () => {
                             onChange={handleChange}
                             className="px-3 py-1 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
                             disabled={!formData.attendReasons.includes('other')}
-                            style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                            style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                           />
                         </div>
                       </div>
@@ -538,7 +538,7 @@ const Feedback = () => {
                 <div>
                   <h2 
                     className="text-xl text-white mb-4 border-b border-gray-800 pb-2 animate-glow"
-                    style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                    style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
                   >
                     Additional Preferences
                   </h2>
@@ -548,7 +548,7 @@ const Feedback = () => {
                       <label 
                         htmlFor="comparison"
                         className="block text-sm text-gray-400 mb-2"
-                        style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.3px' }}
                       >
                         How does this workshop compare to similar experiences you've attended?
                       </label>
@@ -560,14 +560,14 @@ const Feedback = () => {
                         rows="3"
                         className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
                         placeholder="Better, similar, worse? Why?"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       ></textarea>
                     </div>
 
                     <div>
                       <label 
                         className="block text-sm text-gray-400 mb-3"
-                        style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.3px' }}
                       >
                         Would you be interested in regular Freestyle sessions? <span className="text-purple-400">*</span>
                       </label>
@@ -591,7 +591,7 @@ const Feedback = () => {
                             <label 
                               htmlFor={`regular-${option.value}`} 
                               className="text-gray-300 hover:text-white transition-colors"
-                              style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                              style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                             >
                               {option.label}
                             </label>
@@ -603,7 +603,7 @@ const Feedback = () => {
                     <div>
                       <label 
                         className="block text-sm text-gray-400 mb-3"
-                        style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.3px' }}
                       >
                         What other dance styles would you like to learn? (multiple select)
                       </label>
@@ -628,7 +628,7 @@ const Feedback = () => {
                             <label 
                               htmlFor={`dance-${style.value}`} 
                               className="text-gray-300 group-hover:text-white transition-colors"
-                              style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                              style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                             >
                               {style.label}
                             </label>
@@ -647,7 +647,7 @@ const Feedback = () => {
                           <label 
                             htmlFor="dance-other" 
                             className="text-gray-300 mr-2"
-                            style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                            style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                           >
                             Other:
                           </label>
@@ -658,7 +658,7 @@ const Feedback = () => {
                             onChange={handleChange}
                             className="px-3 py-1 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
                             disabled={!formData.danceStyles.includes('other')}
-                            style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                            style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                           />
                         </div>
                       </div>
@@ -677,6 +677,7 @@ const Feedback = () => {
                         rows="3"
                         className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
                         placeholder="Share your interests"
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       ></textarea>
                     </div>
 
@@ -684,7 +685,7 @@ const Feedback = () => {
   <label 
     htmlFor="otherInterests" 
     className="block text-sm text-gray-400 mb-2"
-    style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+    style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.3px' }}
   >
     Besides dance, what other Unplugged experiences would interest you? <span className="text-purple-400">*</span>
   </label>
@@ -697,14 +698,14 @@ const Feedback = () => {
     rows="3"
     className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
     placeholder="Share your interests"
-    style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+    style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
   ></textarea>
 </div>
 
 <div>
   <label 
     className="block text-sm text-gray-400 mb-3"
-    style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+    style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.3px' }}
   >
     Would it help if there is an app where Unplugged curates & recommends weekend experiences for you? <span className="text-purple-400">*</span>
   </label>
@@ -728,7 +729,7 @@ const Feedback = () => {
         <label 
           htmlFor={`app-${option.value}`} 
           className="text-gray-300 hover:text-white transition-colors"
-          style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+          style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
         >
           {option.label}
         </label>
@@ -741,7 +742,7 @@ const Feedback = () => {
   <label 
     htmlFor="additionalFeedback" 
     className="block text-sm text-gray-400 mb-2"
-    style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+    style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.3px' }}
   >
     Any overall thoughts or suggestions?
   </label>
@@ -753,7 +754,7 @@ const Feedback = () => {
     rows="3"
     className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
     placeholder="Additional comments or suggestions"
-    style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+    style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
   ></textarea>
 </div>
 </div>
@@ -765,7 +766,7 @@ const Feedback = () => {
   type="submit"
   disabled={submitting}
   className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center"
-  style={{ fontWeight: 500, letterSpacing: '0.4px' }}
+  style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.4px' }}
 >
   {submitting ? (
     <>

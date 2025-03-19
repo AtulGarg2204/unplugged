@@ -88,12 +88,12 @@ const ScreenTimeCalculator = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white py-32 px-4" style={{ fontFamily: "'Bayon', sans-serif" }}>
+    <div className="min-h-screen bg-black text-white py-32 px-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <div className="container mx-auto max-w-4xl">
         <Link 
           to="/" 
           className="inline-flex items-center text-gray-300 hover:text-purple-400 mb-8 transition-colors duration-300 group"
-          style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+          style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
         >
           <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
           Back to Home
@@ -104,14 +104,14 @@ const ScreenTimeCalculator = () => {
             <div className="relative pulse-bg mb-4 inline-block">
               <h1 
                 className="text-4xl md:text-5xl text-white uppercase animate-glow"
-                style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
               >
                 Your lifetime in screen time
               </h1>
             </div>
             <p 
               className="text-gray-400 max-w-2xl mx-auto text-center"
-              style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
             >
               How many years of your life does your daily average screen time equate to? The average screen time in India is approximately 5 hours a day, which is about a quarter of our waking hours.
             </p>
@@ -132,7 +132,7 @@ const ScreenTimeCalculator = () => {
                     </div>
                     <h2 
                       className="text-xl text-white animate-glow" 
-                      style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                      style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
                     >
                       YOUR AVERAGE DAILY SCREEN TIME
                     </h2>
@@ -142,14 +142,14 @@ const ScreenTimeCalculator = () => {
                     <div className="flex justify-between items-center mb-2">
                       <span 
                         className="text-3xl text-white" 
-                        style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                        style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
                       >
                         {screenTime} HOURS
                       </span>
                       <div className="bg-purple-900/30 rounded-full px-3 py-1 border border-purple-800/30">
                         <span 
                           className="text-sm text-purple-300"
-                          style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                          style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                         >
                           Indian Average: 5 hours
                         </span>
@@ -167,13 +167,13 @@ const ScreenTimeCalculator = () => {
                       />
                       <div 
                         className="absolute -bottom-6 left-0 text-sm text-gray-400"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       >
                         0
                       </div>
                       <div 
                         className="absolute -bottom-6 right-0 text-sm text-gray-400"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       >
                         16
                       </div>
@@ -188,7 +188,7 @@ const ScreenTimeCalculator = () => {
                     </div>
                     <h2 
                       className="text-xl text-white animate-glow"
-                      style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                      style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
                     >
                       YOUR AGE <span className="text-purple-400">*</span>
                     </h2>
@@ -202,11 +202,11 @@ const ScreenTimeCalculator = () => {
                       value={age}
                       onChange={handleAgeChange}
                       className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors text-white text-xl"
-                      style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                      style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                     />
                     <span 
                       className="text-gray-300 text-xl whitespace-nowrap" 
-                      style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                      style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
                     >
                       YEARS OLD
                     </span>
@@ -218,7 +218,7 @@ const ScreenTimeCalculator = () => {
                     onClick={handleCalculate}
                     disabled={isCalculating}
                     className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-3 px-12 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20 pulse-button"
-                    style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                    style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
                   >
                     {isCalculating ? (
                       <span className="flex items-center justify-center">
@@ -246,7 +246,7 @@ const ScreenTimeCalculator = () => {
                 <div className="p-6 bg-gradient-to-r from-purple-900/50 to-indigo-900/50 border-b border-gray-800 text-center">
                   <h2 
                     className="text-2xl text-white animate-glow"
-                    style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                    style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
                   >
                     YOUR LIFETIME IN SCREEN TIME RESULTS
                   </h2>
@@ -255,13 +255,13 @@ const ScreenTimeCalculator = () => {
                 <div className="p-8 text-center">
                   <h2 
                     className="text-4xl text-white mb-1 animate-glow"
-                    style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                    style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
                   >
                     {calculatedResults.years} YEARS
                   </h2>
                   <p 
                     className="text-gray-400"
-                    style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                    style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                   >
                     of the rest of your life, if you continue at your current screen time
                   </p>
@@ -270,13 +270,13 @@ const ScreenTimeCalculator = () => {
                 <div className="p-4 bg-gradient-to-r from-purple-900/30 to-indigo-900/30 text-center border-t border-b border-gray-800">
                   <p 
                     className="text-gray-300"
-                    style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                    style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                   >
                     That's
                   </p>
                   <p 
                     className="text-2xl text-white"
-                    style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                    style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
                   >
                     {calculatedResults.hoursPerYear.toLocaleString()} HOURS PER YEAR
                   </p>
@@ -289,7 +289,7 @@ const ScreenTimeCalculator = () => {
                     </div>
                     <h2 
                       className="text-xl text-white animate-glow"
-                      style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                      style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
                     >
                       BREAKDOWN
                     </h2>
@@ -299,19 +299,19 @@ const ScreenTimeCalculator = () => {
                     <div className="grid grid-cols-3 py-3">
                       <div 
                         className="font-medium text-purple-400"
-                        style={{ fontWeight: 500, letterSpacing: '0.4px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, letterSpacing: '0.4px' }}
                       >
                         WEEKLY
                       </div>
                       <div 
                         className="text-right text-gray-300"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       >
                         {calculatedResults.weekly.hours} hours
                       </div>
                       <div 
                         className="text-right text-gray-300"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       >
                         {calculatedResults.weekly.days} days
                       </div>
@@ -319,19 +319,19 @@ const ScreenTimeCalculator = () => {
                     <div className="grid grid-cols-3 py-3">
                       <div 
                         className="font-medium text-purple-400"
-                        style={{ fontWeight: 500, letterSpacing: '0.4px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, letterSpacing: '0.4px' }}
                       >
                         MONTHLY
                       </div>
                       <div 
                         className="text-right text-gray-300"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       >
                         {calculatedResults.monthly.hours} hours
                       </div>
                       <div 
                         className="text-right text-gray-300"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       >
                         {calculatedResults.monthly.days} days
                       </div>
@@ -339,19 +339,19 @@ const ScreenTimeCalculator = () => {
                     <div className="grid grid-cols-3 py-3">
                       <div 
                         className="font-medium text-purple-400"
-                        style={{ fontWeight: 500, letterSpacing: '0.4px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, letterSpacing: '0.4px' }}
                       >
                         YEARLY
                       </div>
                       <div 
                         className="text-right text-gray-300"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       >
                         {calculatedResults.yearly.hours.toLocaleString()} hours
                       </div>
                       <div 
                         className="text-right text-gray-300"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       >
                         {calculatedResults.yearly.days} days
                       </div>
@@ -359,19 +359,19 @@ const ScreenTimeCalculator = () => {
                     <div className="grid grid-cols-3 py-3">
                       <div 
                         className="font-medium text-purple-400"
-                        style={{ fontWeight: 500, letterSpacing: '0.4px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, letterSpacing: '0.4px' }}
                       >
                         YOUR LIFETIME
                       </div>
                       <div 
                         className="text-right text-gray-300"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       >
                         {calculatedResults.lifetime.hours.toLocaleString()} hours
                       </div>
                       <div 
                         className="text-right text-gray-300"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       >
                         {calculatedResults.lifetime.days} days
                       </div>
@@ -382,13 +382,13 @@ const ScreenTimeCalculator = () => {
                 <div className="p-6 bg-gradient-to-r from-purple-900/30 to-indigo-900/30 text-center border-t border-b border-gray-800">
                   <p 
                     className="text-gray-300 mb-1"
-                    style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                    style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                   >
                     Reduce your screen time by 1 hour a day, you'll save
                   </p>
                   <p 
                     className="text-3xl text-white animate-glow"
-                    style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                    style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
                   >
                     {calculatedResults.savedYears} YEARS
                   </p>
@@ -401,7 +401,7 @@ const ScreenTimeCalculator = () => {
                     </div>
                     <h2 
                       className="text-xl text-white animate-glow"
-                      style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                      style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
                     >
                       WANNA CLAIM BACK YOUR TIME?
                     </h2>
@@ -417,13 +417,13 @@ const ScreenTimeCalculator = () => {
                           placeholder="your@email.com"
                           className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
                           required
-                          style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                          style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                         />
                         <Send className="absolute right-3 top-3 h-5 w-5 text-gray-500" />
                       </div>
                       <p 
                         className="text-xs text-gray-500 mt-2"
-                        style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                       >
                         We send weekly tips on how to reduce your screen time, every Tuesday
                       </p>
@@ -431,7 +431,7 @@ const ScreenTimeCalculator = () => {
                     <button
                       type="submit"
                       className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20"
-                      style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                      style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
                     >
                       HELP ME REDUCE MY SCREEN TIME
                     </button>
@@ -442,7 +442,7 @@ const ScreenTimeCalculator = () => {
                   <button
                     onClick={() => setCalculatedResults(null)}
                     className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
-                    style={{ fontWeight: 400, letterSpacing: '0.4px' }}
+                    style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.4px' }}
                   >
                     BACK
                   </button>

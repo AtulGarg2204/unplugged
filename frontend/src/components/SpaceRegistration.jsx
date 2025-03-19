@@ -64,7 +64,7 @@ const SpaceRegistration = () => {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-black text-white pb-16 pt-40 px-4" style={{ fontFamily: "'Bayon', sans-serif" }}>
+      <div className="min-h-screen bg-black text-white pb-16 pt-40 px-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
         <div className="max-w-3xl mx-auto text-center">
           <div className="bg-[#12121e] rounded-xl shadow-lg p-10 border border-gray-800 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20">
@@ -81,14 +81,14 @@ const SpaceRegistration = () => {
               
               <h2 
                 className="text-3xl text-white mb-4 tracking-wide uppercase animate-glow"
-                style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
               >
                 Thank You for Listing Your Space!
               </h2>
               
               <p 
                 className="text-gray-300 mb-8"
-                style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
               >
                 We have received your space listing and will get in touch with you soon.
               </p>
@@ -96,7 +96,7 @@ const SpaceRegistration = () => {
               <button
                 onClick={() => setIsSubmitted(false)}
                 className="px-6 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20"
-                style={{ fontWeight: 400, letterSpacing: '0.4px' }}
+                style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.4px' }}
               >
                 List another space
               </button>
@@ -108,21 +108,21 @@ const SpaceRegistration = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white pb-16 pt-40 px-4" style={{ fontFamily: "'Bayon', sans-serif" }}>
+    <div className="min-h-screen bg-black text-white pb-16 pt-40 px-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <div className="max-w-4xl mx-auto">
         {/* Page Title */}
         <div className="text-center mb-16">
           <div className="relative pulse-bg inline-block">
             <h1 
               className="text-4xl md:text-5xl tracking-wide uppercase animate-glow mb-4"
-              style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+              style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
             >
               Space Owner
             </h1>
           </div>
           <p 
             className="text-gray-400 max-w-2xl mx-auto"
-            style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+            style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
           >
             We'd love to get to know more about your space and how we can showcase it to potential experience hosts.
           </p>
@@ -143,7 +143,7 @@ const SpaceRegistration = () => {
                 </div>
                 <h2 
                   className="text-2xl text-white tracking-wide animate-glow"
-                  style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                  style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
                 >
                   Tell Us About Your Space
                 </h2>
@@ -155,7 +155,7 @@ const SpaceRegistration = () => {
                     <label 
                       htmlFor="name" 
                       className="block text-sm text-gray-400 mb-2"
-                      style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                      style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                     >
                       Name <span className="text-purple-400">*</span>
                     </label>
@@ -168,7 +168,7 @@ const SpaceRegistration = () => {
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
                       placeholder="Your name"
-                      style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                      style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                     />
                   </div>
 
@@ -176,7 +176,7 @@ const SpaceRegistration = () => {
                     <label 
                       htmlFor="email" 
                       className="block text-sm text-gray-400 mb-2"
-                      style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                      style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                     >
                       Email <span className="text-purple-400">*</span>
                     </label>
@@ -189,7 +189,7 @@ const SpaceRegistration = () => {
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
                       placeholder="Your email"
-                      style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                      style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                     />
                   </div>
                 </div>
@@ -198,7 +198,7 @@ const SpaceRegistration = () => {
                   <label 
                     htmlFor="phone" 
                     className="block text-sm text-gray-400 mb-2"
-                    style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                    style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                   >
                     Phone Number <span className="text-purple-400">*</span>
                   </label>
@@ -206,7 +206,7 @@ const SpaceRegistration = () => {
                     <select
                       className="px-3 py-3 bg-black/50 border border-gray-700 border-r-0 rounded-l-lg focus:outline-none focus:border-purple-500 transition-colors text-gray-400"
                       defaultValue="+91"
-                      style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                      style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                     >
                       <option>+91</option>
                     </select>
@@ -219,7 +219,7 @@ const SpaceRegistration = () => {
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-r-lg focus:outline-none focus:border-purple-500 transition-colors"
                       placeholder="Your phone number"
-                      style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                      style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                     />
                   </div>
                 </div>
@@ -228,7 +228,7 @@ const SpaceRegistration = () => {
                   <label 
                     htmlFor="location" 
                     className="block text-sm text-gray-400 mb-2"
-                    style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                    style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                   >
                     Where is the space located? <span className="text-purple-400">*</span>
                   </label>
@@ -241,7 +241,7 @@ const SpaceRegistration = () => {
                     rows={2}
                     className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
                     placeholder="Enter address or general area"
-                    style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                    style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                   />
                 </div>
 
@@ -249,7 +249,7 @@ const SpaceRegistration = () => {
                   <label 
                     htmlFor="usageType" 
                     className="block text-sm text-gray-400 mb-2"
-                    style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                    style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                   >
                     What can it be used for? <span className="text-purple-400">*</span>
                   </label>
@@ -262,7 +262,7 @@ const SpaceRegistration = () => {
                     rows={3}
                     className="w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
                     placeholder="Describe possible activities (workshops, meetups, etc.)"
-                    style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                    style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                   />
                 </div>
 
@@ -270,14 +270,14 @@ const SpaceRegistration = () => {
                   <label 
                     htmlFor="hourlyRate" 
                     className="block text-sm text-gray-400 mb-2"
-                    style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                    style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                   >
                     How much do you want to charge for an hourly rental? <span className="text-purple-400">*</span>
                   </label>
                   <div className="relative">
                     <span 
                       className="absolute left-4 top-3.5 text-gray-400"
-                      style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                      style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                     >
                       ₹
                     </span>
@@ -291,7 +291,7 @@ const SpaceRegistration = () => {
                       onChange={handleChange}
                       className="w-full pl-8 pr-4 py-3 bg-black/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition-colors"
                       placeholder="Hourly rate"
-                      style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                      style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                     />
                   </div>
                 </div>
@@ -301,7 +301,7 @@ const SpaceRegistration = () => {
                     type="submit"
                     disabled={isLoading}
                     className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20 pulse-button"
-                    style={{ fontWeight: 400, letterSpacing: '0.5px' }}
+                    style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.5px' }}
                   >
                     {isLoading ? (
                       <>

@@ -6,8 +6,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        bayon: ['Bayon', 'sans-serif'],
-      },
+  'dm-serif': ['"DM Serif Display"', 'serif'],
+  'dm-sans': ['"DM Sans"', 'sans-serif'],
+},
     },
   },
   plugins: [],

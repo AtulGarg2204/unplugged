@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="flex justify-center md:justify-start">
             <h2 
               className="text-3xl font-bold gradient-text"
-              style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 600, letterSpacing: '0.5px' }}
+              style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 600, letterSpacing: '0.5px' }}
             >
               Unplugged
             </h2>
@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="mt-8 md:mt-0">
             <p 
               className="text-center md:text-right text-gray-400 italic"
-              style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
             >
               Unique experiences in Bangalore
             </p>
@@ -56,7 +56,7 @@ const Footer = () => {
           <div className="mt-8 md:mt-0">
             <p 
               className="text-base text-gray-400"
-              style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
             >
               &copy; {new Date().getFullYear()} Unplugged. All rights reserved.
             </p>

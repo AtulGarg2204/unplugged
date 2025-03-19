@@ -44,14 +44,14 @@ const ExperienceCard = ({ experience }) => {
              }}>
           <h3 
             className="text-xl text-white mb-1 animate-glow"
-            style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 500, letterSpacing: '0.5px' }}
+            style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
           >
             {experience.name}
           </h3>
           <p 
             className="text-white/80 text-sm transition-all duration-500"
             style={{
-              fontFamily: "'Bayon', sans-serif", 
+              fontFamily: "'DM Sans', sans-serif", 
               fontWeight: 300, 
               letterSpacing: '0.3px',
               transform: isHovered ? 'translateY(0)' : 'translateY(5px)',
@@ -67,7 +67,7 @@ const ExperienceCard = ({ experience }) => {
         <p 
           className="text-purple-400 mb-3 italic text-lg transition-all duration-500"
           style={{
-            fontFamily: "'Bayon', sans-serif", 
+            fontFamily: "'DM Sans', sans-serif", 
             fontWeight: 400,
             letterSpacing: '0.4px',
             transform: isHovered ? 'translateX(5px)' : 'translateX(0)'
@@ -79,7 +79,7 @@ const ExperienceCard = ({ experience }) => {
         <div 
           className="flex items-center mt-2 text-gray-300 text-sm transition-all duration-300"
           style={{
-            fontFamily: "'Bayon', sans-serif",
+            fontFamily: "'DM Sans', sans-serif",
             fontWeight: 300,
             letterSpacing: '0.2px',
             opacity: isHovered ? 1 : 0.8
@@ -97,7 +97,7 @@ const ExperienceCard = ({ experience }) => {
         <div 
           className="flex items-center mt-2 text-gray-300 text-sm transition-all duration-300"
           style={{
-            fontFamily: "'Bayon', sans-serif",
+            fontFamily: "'DM Sans', sans-serif",
             fontWeight: 300,
             letterSpacing: '0.2px',
             opacity: isHovered ? 1 : 0.8
@@ -113,7 +113,7 @@ const ExperienceCard = ({ experience }) => {
         <div 
           className="flex items-center mt-3 font-semibold text-white p-2 rounded-lg transition-all duration-500 price-highlight"
           style={{
-            fontFamily: "'Bayon', sans-serif",
+            fontFamily: "'DM Sans', sans-serif",
             fontWeight: 500,
             letterSpacing: '0.4px'
           }}

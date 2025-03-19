@@ -64,7 +64,7 @@ const ArtistRegistration = () => {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-black text-white pb-16 pt-40 px-4" style={{ fontFamily: "'Bayon', sans-serif" }}>
+      <div className="min-h-screen bg-black text-white pb-16 pt-40 px-4" style={{ fontFamily: "'DM Serif Display', serif" }}>
         <div className="max-w-3xl mx-auto text-center">
           <div className="bg-[#12121e] rounded-xl shadow-lg p-10 border border-gray-800 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20">
@@ -108,7 +108,7 @@ const ArtistRegistration = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white pb-16 pt-40 px-4" style={{ fontFamily: "'Bayon', sans-serif" }}>
+    <div className="min-h-screen bg-black text-white pb-16 pt-40 px-4" style={{ fontFamily: "'DM Serif Display', serif" }}>
       <div className="max-w-4xl mx-auto">
         {/* Page Title */}
         <div className="text-center mb-16">

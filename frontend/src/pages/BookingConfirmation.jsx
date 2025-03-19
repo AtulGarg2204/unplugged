@@ -13,7 +13,7 @@ const BookingConfirmation = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white pb-16 pt-40 px-4 flex items-center justify-center" style={{ fontFamily: "'Bayon', sans-serif" }}>
+    <div className="min-h-screen bg-black text-white pb-16 pt-40 px-4 flex items-center justify-center" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <div className={`w-full max-w-lg transition-all duration-700 transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
         <div className="bg-[#12121e] rounded-xl shadow-lg p-10 border border-gray-800 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20">
@@ -28,7 +28,15 @@ const BookingConfirmation = () => {
             
             <h1 
               className="text-3xl text-white uppercase mb-6 animate-glow text-center"
-              style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+              style={{ 
+                fontFamily: "'DM Serif Display', serif", 
+                fontWeight: 500, 
+                letterSpacing: '0.5px',
+                background: "linear-gradient(to bottom, #ffffff, #999999)",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text"
+              }}
             >
               Booking Confirmed!
             </h1>
@@ -36,7 +44,7 @@ const BookingConfirmation = () => {
             <div className="space-y-6 mb-8">
               <p 
                 className="text-gray-300 text-center"
-                style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
               >
                 Thank you for booking the experience. We have received your booking and payment confirmation.
               </p>
@@ -45,7 +53,7 @@ const BookingConfirmation = () => {
                 <Mail className="h-5 w-5 text-purple-400 flex-shrink-0" />
                 <p 
                   className="text-gray-300"
-                  style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                  style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                 >
                   A confirmation email has been sent to your registered email address.
                 </p>
@@ -54,7 +62,7 @@ const BookingConfirmation = () => {
               <div className="bg-purple-900/20 p-4 rounded-lg border border-purple-900/40">
                 <p 
                   className="text-purple-300 text-center"
-                  style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                  style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                 >
                   Please check your email for detailed information about the experience.
                   If you don't see the email, please check your spam folder.
@@ -65,7 +73,7 @@ const BookingConfirmation = () => {
                 <Calendar className="h-5 w-5 text-purple-400 flex-shrink-0 mt-0.5" />
                 <p 
                   className="text-gray-300"
-                  style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                  style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                 >
                   We're excited to see you at the event! Add this to your calendar so you don't miss it.
                 </p>
@@ -76,7 +84,7 @@ const BookingConfirmation = () => {
               <Link
                 to="/"
                 className="flex items-center justify-center w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20"
-                style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, letterSpacing: '0.5px' }}
               >
                 <Home className="mr-2 h-5 w-5" />
                 Return to Home

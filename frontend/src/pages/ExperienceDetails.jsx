@@ -1,6 +1,7 @@
+
 import { useEffect, useState } from "react"
 import { useParams, Link, useNavigate } from "react-router-dom"
-import { Instagram, MapPin, ArrowLeft, Loader2, MessageSquare } from "lucide-react"
+import { Instagram, MapPin, ArrowLeft, Loader2, MessageSquare } from 'lucide-react'
 import axios from "axios"
 
 const ExperienceDetails = () => {
@@ -159,7 +160,7 @@ const ExperienceDetails = () => {
     return (
       <div 
         className="container mx-auto p-4 text-center text-red-400 bg-black min-h-screen"
-        style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
+        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
       >
         <p>{error}</p>
         <Link
@@ -175,7 +176,7 @@ const ExperienceDetails = () => {
     return (
       <div 
         className="container mx-auto p-4 text-center bg-black text-white min-h-screen"
-        style={{ fontFamily: "'Bayon', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
+        style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
       >
         <p>Experience not found</p>
         <Link
@@ -193,12 +194,12 @@ const ExperienceDetails = () => {
     : `${process.env.REACT_APP_API_URI}${mainImageUrl}`
 
   return (
-    <div className="bg-black text-white min-h-screen" style={{ fontFamily: "'Bayon', sans-serif" }}>
+    <div className="bg-black text-white min-h-screen" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <div className="container mx-auto px-4 pb-16 pt-40 max-w-6xl">
         <Link
           to="/"
           className="inline-flex items-center text-gray-300 hover:text-purple-400 mb-6 transition-colors duration-300"
-          style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+          style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to Experiences
@@ -242,25 +243,25 @@ const ExperienceDetails = () => {
           <div className="bg-black p-6 rounded-lg shadow-lg transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl border border-gray-800 pulse-bg">
             <h1 
               className="text-3xl text-white mb-1 tracking-wide uppercase animate-glow"
-              style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+              style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
             >
               {experience.name}
             </h1>
             <p 
               className="text-gray-300 mb-4 transition-all duration-300"
-              style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
             >
               {experience.shortDescription}
             </p>
 
             <div 
               className="text-2xl font-bold text-white mb-4 price-highlight inline-block px-3 py-1 rounded"
-              style={{ fontWeight: 500, letterSpacing: '0.4px' }}
+              style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.4px' }}
             >
               ₹{experience.registrationFee.toLocaleString()}
               <span 
                 className="text-sm font-normal text-gray-400 ml-2"
-                style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
               >
                 (Inclusive of 18% GST)
               </span>
@@ -268,7 +269,7 @@ const ExperienceDetails = () => {
 
             <div 
               className="flex items-center mb-4 text-gray-300"
-              style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
             >
               <MapPin className="mr-2 h-5 w-5 text-purple-400 float-icon" />
               <span>The Brown Table, Sadashivnagar, Bangalore</span>
@@ -276,7 +277,7 @@ const ExperienceDetails = () => {
 
             <div 
               className="flex flex-wrap items-center border-b border-t border-gray-800 py-4 mb-4"
-              style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
             >
               <div className="mr-8">
                 <span className="text-gray-300">
@@ -292,13 +293,13 @@ const ExperienceDetails = () => {
             <div className="mb-6">
               <p 
                 className="text-sm text-gray-300 mb-2"
-                style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
               >
                 {experience.numberOfSeats} seats left
               </p>
               <p 
                 className="text-gray-300 mb-4"
-                style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
               >
                 {experience.description}
               </p>
@@ -306,7 +307,7 @@ const ExperienceDetails = () => {
               {experience.artistName && (
                 <p 
                   className="text-purple-400 italic mb-2 animate-glow"
-                  style={{ fontWeight: 400, letterSpacing: '0.4px' }}
+                  style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.4px' }}
                 >
                   The theme for this experience is led by {experience.artistName}.
                 </p>
@@ -318,7 +319,7 @@ const ExperienceDetails = () => {
                 onClick={handleBooking}
                 disabled={isBooking}
                 className="inline-flex items-center justify-center bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold py-3 px-8 rounded-md transition-all duration-300 transform hover:scale-105 w-full pulse-button"
-                style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+                style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
               >
                 {isBooking ? (
                   <>
@@ -333,7 +334,7 @@ const ExperienceDetails = () => {
               <button
                 onClick={navigateToFeedback}
                 className="inline-flex items-center justify-center bg-black hover:bg-gray-900 text-white font-medium py-2 px-4 rounded-md transition-all duration-300 text-sm w-auto mx-auto hover:shadow-md border border-gray-800 hover:border-purple-400"
-                style={{ fontWeight: 400, letterSpacing: '0.4px' }}
+                style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.4px' }}
               >
                 <MessageSquare className="mr-1 h-4 w-4" />
                 Give Your Feedback
@@ -347,7 +348,7 @@ const ExperienceDetails = () => {
           <div className="bg-black p-6 rounded-lg shadow-lg transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl border border-gray-800 card-hover">
             <h2 
               className="text-xl text-white mb-4 tracking-wide animate-glow"
-              style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+              style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
             >
               What Will You Get
             </h2>
@@ -356,7 +357,7 @@ const ExperienceDetails = () => {
                 <span className="text-purple-400 mr-2 transition-transform duration-300 group-hover:scale-125">•</span>
                 <span 
                   className="text-gray-300 transition-colors duration-300 group-hover:text-white"
-                  style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                  style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                 >
                   An immersive experience using the finest ingredients, under the guidance of expert artists.
                 </span>
@@ -365,7 +366,7 @@ const ExperienceDetails = () => {
                 <span className="text-purple-400 mr-2 transition-transform duration-300 group-hover:scale-125">•</span>
                 <span 
                   className="text-gray-300 transition-colors duration-300 group-hover:text-white"
-                  style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                  style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                 >
                   A delectable menu to relish during the experience.
                 </span>
@@ -374,7 +375,7 @@ const ExperienceDetails = () => {
                 <span className="text-purple-400 mr-2 transition-transform duration-300 group-hover:scale-125">•</span>
                 <span 
                   className="text-gray-300 transition-colors duration-300 group-hover:text-white"
-                  style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                  style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                 >
                   An exclusive recipe e-booklet.
                 </span>
@@ -383,7 +384,7 @@ const ExperienceDetails = () => {
                 <span className="text-purple-400 mr-2 transition-transform duration-300 group-hover:scale-125">•</span>
                 <span 
                   className="text-gray-300 transition-colors duration-300 group-hover:text-white"
-                  style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                  style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                 >
                   Unadulterated joy, conversations and memories to take home.
                 </span>
@@ -394,7 +395,7 @@ const ExperienceDetails = () => {
           <div className="bg-black p-6 rounded-lg shadow-lg transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl border border-gray-800 card-hover">
             <h2 
               className="text-xl text-white mb-4 tracking-wide animate-glow"
-              style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+              style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
             >
               Registration Details
             </h2>
@@ -403,7 +404,7 @@ const ExperienceDetails = () => {
                 <span className="text-purple-400 mr-2 transition-transform duration-300 group-hover:scale-125">•</span>
                 <span 
                   className="text-gray-300 transition-colors duration-300 group-hover:text-white"
-                  style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                  style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                 >
                   One ticket is valid for one participant.
                 </span>
@@ -412,7 +413,7 @@ const ExperienceDetails = () => {
                 <span className="text-purple-400 mr-2 transition-transform duration-300 group-hover:scale-125">•</span>
                 <span 
                   className="text-gray-300 transition-colors duration-300 group-hover:text-white"
-                  style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                  style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                 >
                   Ticket price includes all material, equipment and utilities required for the experience.
                 </span>
@@ -421,7 +422,7 @@ const ExperienceDetails = () => {
                 <span className="text-purple-400 mr-2 transition-transform duration-300 group-hover:scale-125">•</span>
                 <span 
                   className="text-gray-300 transition-colors duration-300 group-hover:text-white"
-                  style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                  style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                 >
                   Registrations close on the day of the experience - an hour prior to the start time, subject to
                   availability of seats.
@@ -431,7 +432,7 @@ const ExperienceDetails = () => {
                 <span className="text-purple-400 mr-2 transition-transform duration-300 group-hover:scale-125">•</span>
                 <span 
                   className="text-gray-300 transition-colors duration-300 group-hover:text-white"
-                  style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+                  style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
                 >
                   Cancellations, refunds and transfers, if any, will be as per our Refund Policy.
                 </span>
@@ -445,13 +446,13 @@ const ExperienceDetails = () => {
           <div id="about-artist" className={`mb-12 bg-black p-6 rounded-lg shadow-lg transition-all duration-500 hover:shadow-purple-500/20 hover:shadow-xl border border-gray-800 card-hover ${visibleSections.aboutArtist ? 'fade-in' : 'fade-in-slow'}`}>
             <h2 
               className="text-xl text-white mb-4 tracking-wide animate-glow"
-              style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+              style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
             >
               About the Artist
             </h2>
             <p 
               className="text-gray-300 mb-4 transition-colors duration-300 hover:text-white"
-              style={{ fontWeight: 300, letterSpacing: '0.3px' }}
+              style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}
             >
               {experience.aboutArtist}
             </p>
@@ -464,7 +465,7 @@ const ExperienceDetails = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-pink-400 hover:text-pink-300 hover:underline transition-colors duration-300"
-                  style={{ fontWeight: 400, letterSpacing: '0.3px' }}
+                  style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 400, letterSpacing: '0.3px' }}
                 >
                   {experience.artistInstagramId}
                 </a>
@@ -478,7 +479,7 @@ const ExperienceDetails = () => {
           <div id="video-section" className={`mb-12 ${visibleSections.video ? 'fade-in' : 'fade-in-slow'}`}>
             <h2 
               className="text-xl text-white mb-4 tracking-wide animate-glow"
-              style={{ fontWeight: 500, letterSpacing: '0.5px' }}
+              style={{ fontFamily: "'DM Serif Display', serif", fontWeight: 500, letterSpacing: '0.5px' }}
             >
               Watch Preview
             </h2>
