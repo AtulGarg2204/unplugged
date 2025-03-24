@@ -11,23 +11,37 @@ dotenv.config();
 const app = express();
 
 // Middleware
-const allowedOrigins = [
-  'https://unplugged123.netlify.app',
-  'https://unplugged-oqyy.vercel.app',
-  'https://unplugged-1.vercel.app',
-  'https://unplugged-1.vercel.app/api/experiences',
-  'http://localhost:3000' // Add your local development URL
-];
+// const allowedOrigins = [
+//   'https://unplugged123.netlify.app',
+//   'https://unplugged-oqyy.vercel.app',
+//   'https://unplugged-1.vercel.app',
+//   'https://unplugged-1.vercel.app/api/experiences',
+//   'http://localhost:3000' // Add your local development URL
+// ];
 
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-}));
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   }
+// }));
+// In your server.js file, update your CORS configuration
+const corsOptions = {
+  origin: '*', // Allow all origins - you can restrict this to specific domains for production
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
+  credentials: true,
+  preflightContinue: false,
+  optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
+
+// Add a specific handler for OPTIONS requests
+app.options('*', cors(corsOptions));
 // app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
