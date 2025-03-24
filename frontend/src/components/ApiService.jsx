@@ -103,7 +103,6 @@ const ApiService = {
 
   // Delete experience
   deleteExperience: async (id) => {
-    console.log("hello");
     try {
       const response = await axios.delete(`${API_URL}/api/experiences/${id}`);
       return response.data;
