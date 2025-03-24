@@ -161,11 +161,12 @@ router.patch('/:id/status', async (req, res) => {
 // DELETE experience
 router.delete('/:id', async (req, res) => {
   try {
+    console.log("in the backend");
     const experience = await Experience.findById(req.params.id);
     if (!experience) {
       return res.status(404).json({ message: 'Experience not found' });
     }
-    
+    console.log("expeirence",experience);
     // Delete the associated image if it exists
     if (experience.imageUrl && experience.imageUrl.startsWith('/uploads/')) {
       const imagePath = path.join(__dirname, '..', experience.imageUrl);
@@ -175,6 +176,7 @@ router.delete('/:id', async (req, res) => {
     }
     
     await Experience.findByIdAndDelete(req.params.id);
+    console.log("experiencedede")
     res.json({ message: 'Experience deleted' });
   } catch (err) {
     res.status(500).json({ message: err.message });
