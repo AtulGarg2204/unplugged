@@ -2,7 +2,6 @@ const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
 const dotenv = require("dotenv")
-const path = require("path")
 
 // Load environment variables
 dotenv.config()
@@ -42,11 +41,8 @@ app.use(cors(corsOptions));
 // Handle preflight requests specifically
 app.options('*', cors(corsOptions));
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-
-// Serve uploaded files
-app.use("/uploads", express.static(path.join(__dirname, "uploads")))
+app.use(express.json({ limit: '50mb' })); // Increased limit for base64 images
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 // Import routes
 const experienceRoutes = require("./routes/Experiences")
@@ -80,7 +76,7 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({
     success: false,
-    message: 'Something went wrong on the server'
+    message: 'Something went wrong on the server: ' + err.message
   });
 });
 

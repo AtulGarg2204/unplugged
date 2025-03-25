@@ -2,22 +2,11 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
-const fs = require('fs');
 const Experience = require('../models/Experience');
 
-// Configure multer storage
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    const uploadDir = 'uploads/';
-    if (!fs.existsSync(uploadDir)) {
-      fs.mkdirSync(uploadDir, { recursive: true });
-    }
-    cb(null, uploadDir);
-  },
-  filename: (req, file, cb) => {
-    cb(null, `${Date.now()}-${file.originalname}`);
-  }
-});
+// For Vercel deployment, we need to use memory storage instead of disk storage
+// since Vercel serverless functions run in a read-only filesystem
+const storage = multer.memoryStorage();
 
 // Configure upload settings
 const upload = multer({
@@ -34,6 +23,11 @@ const upload = multer({
     cb(new Error('Only image files are allowed!'));
   }
 });
+
+// Helper function to generate a Base64 data URL from file buffer
+const bufferToDataUrl = (buffer, mimetype) => {
+  return `data:${mimetype};base64,${buffer.toString('base64')}`;
+};
 
 // GET all experiences
 router.get('/', async (req, res) => {
@@ -71,7 +65,12 @@ router.get('/:id', async (req, res) => {
 // POST create new experience
 router.post('/', upload.single('image'), async (req, res) => {
   try {
-    const imageUrl = req.file ? `/uploads/${req.file.filename}` : req.body.imageUrl;
+    let imageUrl = req.body.imageUrl || '';
+    
+    // If a file was uploaded, create a data URL
+    if (req.file) {
+      imageUrl = bufferToDataUrl(req.file.buffer, req.file.mimetype);
+    }
     
     const experience = new Experience({
       name: req.body.name,
@@ -107,8 +106,11 @@ router.put('/:id', upload.single('image'), async (req, res) => {
       return res.status(404).json({ message: 'Experience not found' });
     }
 
-    // If a new image is uploaded, use that path. Otherwise, keep the existing one.
-    const imageUrl = req.file ? `/uploads/${req.file.filename}` : (req.body.imageUrl || experience.imageUrl);
+    // If a new image is uploaded, create a data URL. Otherwise, keep the existing one.
+    let imageUrl = req.body.imageUrl || experience.imageUrl;
+    if (req.file) {
+      imageUrl = bufferToDataUrl(req.file.buffer, req.file.mimetype);
+    }
 
     const updatedExperience = await Experience.findByIdAndUpdate(
       req.params.id,
@@ -166,13 +168,7 @@ router.delete('/:id', async (req, res) => {
       return res.status(404).json({ message: 'Experience not found' });
     }
     
-    // Delete the associated image if it exists
-    if (experience.imageUrl && experience.imageUrl.startsWith('/uploads/')) {
-      const imagePath = path.join(__dirname, '..', experience.imageUrl);
-      if (fs.existsSync(imagePath)) {
-        fs.unlinkSync(imagePath);
-      }
-    }
+    // No need to delete physical files since we're using data URLs now
     
     await Experience.findByIdAndDelete(req.params.id);
     res.json({ message: 'Experience deleted' });
