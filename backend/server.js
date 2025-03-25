@@ -10,50 +10,37 @@ dotenv.config()
 // Initialize Express app
 const app = express()
 
-// CORS Debugging Middleware
-app.use((req, res, next) => {
-  console.log("🔍 Incoming request:")
-  console.log(`   Origin: ${req.headers.origin}`)
-  console.log(`   Method: ${req.method}`)
-  console.log(`   Path: ${req.path}`)
-  console.log(`   Headers:`, JSON.stringify(req.headers, null, 2))
+// Define allowed origins
+const allowedOrigins = [
+  'https://unplugged-oqyy.vercel.app',
+  'https://unplugged-1.vercel.app',
+  'http://localhost:3000'
+];
 
-  // Add a listener for the 'finish' event to log response headers
-  res.on("finish", () => {
-    console.log("📤 Outgoing response:")
-    console.log(`   Status: ${res.statusCode}`)
-    console.log(`   Headers:`, JSON.stringify(res.getHeaders(), null, 2))
-  })
+// CORS configuration
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps, curl requests)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      console.log(`Origin ${origin} not allowed by CORS`);
+      callback(null, true); // Allow for debugging, change to false in production
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
 
-  next()
-})
+// Apply CORS with options
+app.use(cors(corsOptions));
 
-// CORS middleware with explicit headers
-app.use((req, res, next) => {
-  // Set CORS headers directly
-  res.header("Access-Control-Allow-Origin", "*")
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, PATCH, OPTIONS")
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization")
-  res.header("Access-Control-Allow-Credentials", "true")
-
-  // Handle preflight requests
-  if (req.method === "OPTIONS") {
-    console.log("⚠️ Handling OPTIONS preflight request")
-    return res.status(200).end()
-  }
-
-  next()
-})
-
-// Standard CORS middleware as backup
-app.use(
-  cors({
-    origin: "*", // Allow all origins for debugging
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-    allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization"],
-  }),
-)
+// Handle preflight requests specifically
+app.options('*', cors(corsOptions));
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -77,11 +64,25 @@ app.use("/api/artists", artistRoutes)
 app.use("/api/spaces", spaceRoutes)
 app.use("/api/feedback", feedbackRoutes)
 
+// Basic route for testing
+app.get('/', (req, res) => {
+  res.send('Unplugged API is running');
+});
+
 // Connect to MongoDB
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Could not connect to MongoDB", err))
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({
+    success: false,
+    message: 'Something went wrong on the server'
+  });
+});
 
 // Define port
 const PORT = process.env.PORT || 5000
@@ -90,4 +91,3 @@ const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
-
