@@ -10,50 +10,50 @@ dotenv.config()
 // Initialize Express app
 const app = express()
 
-// Middleware
-const allowedOrigins = [
-  "https://unplugged123.netlify.app",
-  "https://unplugged-oqyy.vercel.app",
-  "https://unplugged-1.vercel.app",
-  "http://localhost:3001",
-]
+// CORS Debugging Middleware
+app.use((req, res, next) => {
+  console.log("🔍 Incoming request:")
+  console.log(`   Origin: ${req.headers.origin}`)
+  console.log(`   Method: ${req.method}`)
+  console.log(`   Path: ${req.path}`)
+  console.log(`   Headers:`, JSON.stringify(req.headers, null, 2))
 
-// CORS middleware with proper error handling
+  // Add a listener for the 'finish' event to log response headers
+  res.on("finish", () => {
+    console.log("📤 Outgoing response:")
+    console.log(`   Status: ${res.statusCode}`)
+    console.log(`   Headers:`, JSON.stringify(res.getHeaders(), null, 2))
+  })
+
+  next()
+})
+
+// CORS middleware with explicit headers
+app.use((req, res, next) => {
+  // Set CORS headers directly
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, PATCH, OPTIONS")
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization")
+  res.header("Access-Control-Allow-Credentials", "true")
+
+  // Handle preflight requests
+  if (req.method === "OPTIONS") {
+    console.log("⚠️ Handling OPTIONS preflight request")
+    return res.status(200).end()
+  }
+
+  next()
+})
+
+// Standard CORS middleware as backup
 app.use(
   cors({
-    origin: (origin, callback) => {
-      // Allow requests with no origin (like mobile apps, curl requests)
-      if (!origin) return callback(null, true)
-
-      if (allowedOrigins.indexOf(origin) !== -1) {
-        callback(null, true)
-      } else {
-        console.log("CORS blocked origin:", origin)
-        // Instead of throwing an error, just log it and allow with a warning
-        callback(null, true)
-        // If you want to strictly enforce CORS:
-        // callback(new Error('Not allowed by CORS'));
-      }
-    },
+    origin: "*", // Allow all origins for debugging
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-    allowedHeaders: [
-      "X-CSRF-Token",
-      "X-Requested-With",
-      "Accept",
-      "Accept-Version",
-      "Content-Length",
-      "Content-MD5",
-      "Content-Type",
-      "Date",
-      "X-Api-Version",
-      "Authorization",
-    ],
+    allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization"],
   }),
 )
-
-// Handle OPTIONS requests explicitly
-app.options("*", cors())
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
