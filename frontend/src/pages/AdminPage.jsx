@@ -11,7 +11,7 @@ const AdminPage = () => {
   const [error, setError] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [currentExperience, setCurrentExperience] = useState(null);
-  const [formMode, setFormMode] = useState('add'); // 'add' or 'edit'
+  const [formMode, setFormMode] = useState('add');
   const [showBookings, setShowBookings] = useState(false);
   const [bookings, setBookings] = useState([]);
 
@@ -73,7 +73,6 @@ const AdminPage = () => {
   const handleToggleStatus = async (id, isActive) => {
     try {
       await ApiService.updateExperienceStatus(id, isActive);
-      // Update local state to reflect the change
       setExperiences(experiences.map(exp => 
         exp._id === id ? { ...exp, isActive } : exp
       ));
@@ -87,7 +86,6 @@ const AdminPage = () => {
     if (window.confirm('Are you sure you want to delete this experience? This action cannot be undone.')) {
       try {
         await ApiService.deleteExperience(id);
-        // Remove from local state
         setExperiences(experiences.filter(exp => exp._id !== id));
       } catch (err) {
         console.error('Failed to delete experience:', err);
@@ -119,14 +117,15 @@ const AdminPage = () => {
     if (loading) {
       return (
         <div className="flex justify-center items-center h-64">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-500"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-500"></div>
         </div>
       );
     }
 
     if (error) {
       return (
-        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
+        <div className="bg-red-900/20 border border-red-800 text-red-400 px-6 py-4 rounded-lg"
+             style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300, letterSpacing: '0.3px' }}>
           {error}
         </div>
       );
@@ -134,8 +133,19 @@ const AdminPage = () => {
 
     if (showForm) {
       return (
-        <div className="bg-white shadow rounded-lg p-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-6">
+        <div className="bg-[#0a0a13] shadow-lg rounded-xl p-8 border border-gray-800 transition-all duration-500 hover:shadow-purple-500/20">
+          <h2 
+            style={{ 
+              background: "linear-gradient(to right, #8B5CF6, #6366F1)",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              fontFamily: "'DM Serif Display', serif",
+              fontWeight: "500",
+              letterSpacing: '0.5px'
+            }}
+            className="text-2xl mb-6"
+          >
             {formMode === 'add' ? 'Add New Experience' : 'Edit Experience'}
           </h2>
           <ExperienceForm 
@@ -169,36 +179,73 @@ const AdminPage = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-40">
-      <div className="md:flex md:items-center md:justify-between mb-6">
-        <h1 className="text-3xl font-bold text-gray-900">Experience Management</h1>
+    <div className="min-h-screen bg-black">
+      <div className="max-w-7xl mx-auto pb-16 pt-40 px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+          <div>
+            <h3 
+              className="text-purple-400 text-sm font-medium mb-2"
+              style={{ 
+                fontFamily: "'DM Sans', sans-serif",
+                fontStyle: "italic"
+              }}
+            >
+              Dashboard
+            </h3>
+            <h1 
+              className="text-4xl font-bold mb-4"
+              style={{ 
+                background: "linear-gradient(to right, #8B5CF6, #6366F1)",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                fontFamily: "'DM Serif Display', serif",
+                letterSpacing: '0.5px'
+              }}
+            >
+              EXPERIENCE MANAGEMENT
+            </h1>
+          </div>
+          
+          {!showForm && !showBookings && (
+            <button
+              onClick={handleAddNew}
+              className="mt-4 md:mt-0 inline-flex items-center px-6 py-3 rounded-full text-white bg-purple-600 hover:bg-purple-700 transition-all duration-300 transform hover:scale-105"
+              style={{ 
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 500,
+                letterSpacing: '0.5px'
+              }}
+            >
+              <PlusCircle className="mr-2 h-5 w-5" />
+              Add New Experience
+            </button>
+          )}
+          
+          {(showForm || showBookings) && (
+            <button
+              onClick={() => {
+                setShowForm(false);
+                setShowBookings(false);
+                setCurrentExperience(null);
+              }}
+              className="mt-4 md:mt-0 inline-flex items-center px-6 py-3 rounded-lg text-gray-300 bg-transparent border border-gray-700 hover:border-purple-500 hover:text-white transition-all duration-300"
+              style={{ 
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 400,
+                letterSpacing: '0.4px'
+              }}
+            >
+              <ChevronLeft className="mr-2 h-5 w-5" />
+              Back to List
+            </button>
+          )}
+        </div>
         
-        {!showForm && !showBookings && (
-          <button
-            onClick={handleAddNew}
-            className="mt-4 md:mt-0 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-          >
-            <PlusCircle className="mr-2 -ml-1 h-4 w-4" />
-            Add New Experience
-          </button>
-        )}
-        
-        {(showForm || showBookings) && (
-          <button
-            onClick={() => {
-              setShowForm(false);
-              setShowBookings(false);
-              setCurrentExperience(null);
-            }}
-            className="mt-4 md:mt-0 inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-          >
-            <ChevronLeft className="mr-2 -ml-1 h-4 w-4" />
-            Back to List
-          </button>
-        )}
+        <div className="bg-[#0a0a13] rounded-xl shadow-xl border border-gray-800">
+          {renderContent()}
+        </div>
       </div>
-      
-      {renderContent()}
     </div>
   );
 };
